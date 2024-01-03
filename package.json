@@ -1,0 +1,25 @@
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "Provide a more detailed description of your project here.",
+  "main": "coding.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "some-library": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "rules": {
+      "no-console": "off"
+    }
+  }
+}
+
