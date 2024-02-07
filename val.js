@@ -36,3 +36,25 @@ document.getElementById('imageToClick').addEventListener('click', function(e) {
         });
     }
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var imageContainer = document.querySelector('.imagecontainer');
+
+    // Function to scale up
+    function scaleUp() {
+        imageContainer.style.transform = 'scale(1.1)';
+        imageContainer.style.transition = 'transform 1s ease';
+    }
+
+    // Function to scale down back to normal
+    function scaleDown() {
+        imageContainer.style.transform = 'scale(1)';
+        imageContainer.style.transition = 'transform 1s ease';
+    }
+
+    // Listen for touch events
+    imageContainer.addEventListener('touchstart', scaleUp);
+    document.addEventListener('touchend', scaleDown);
+});
