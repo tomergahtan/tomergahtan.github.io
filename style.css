@@ -54,7 +54,8 @@ body::before {
 
 .imagecontainer{
    text-align: center;
-    
+   transition: transform 1s ease; /* Smooth transition for transform changes */
+   display: inline-block; /* or as per your layout needs */
 }
 
 .openimage{
