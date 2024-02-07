@@ -20,6 +20,7 @@ body::before {
 }
 
 .bless{
+    padding-top: 30px;
     text-align: center;
     font-size: clamp(20px, 4vw, 30px);
     font-family: "Amatic SC", sans-serif;
@@ -33,7 +34,7 @@ body::before {
 }
 
 .openimage{
-    max-width: 15%;
+    max-width: 25%;
     
     
     
@@ -41,7 +42,7 @@ body::before {
 
 @media (max-width: 786px) {
     .openimage {
-        max-width: 25%;
+        max-width: 50%;
     }
 }
 
