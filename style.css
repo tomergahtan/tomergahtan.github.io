@@ -1,0 +1,63 @@
+body {
+  position: relative; /* Needed to position the pseudo-element */
+  margin: 0; /* Optional: removes the default margin of the body */
+  height: 100%; /* Ensure it covers the full viewport height */
+  min-height: 100vh; /* Use viewport height to cover the full screen */
+}
+
+body::before {
+  content: ""; /* Required for the pseudo-element to work */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/hearts background.webp'); /* Your image */
+   /* No repeat */
+  background-size: contain; /* Cover the full area */
+  opacity: 0.3; /* Set the opacity to 20% */
+  z-index: -1; /* Ensure the background is behind the content */
+}
+
+.bless{
+    text-align: center;
+    font-size: clamp(20px, 4vw, 30px);
+    font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.imagecontainer{
+   text-align: center;
+    
+}
+
+.openimage{
+    max-width: 15%;
+    
+    
+    
+}
+
+@media (max-width: 786px) {
+    .openimage {
+        max-width: 25%;
+    }
+}
+
+@keyframes customPulse {
+    0% {
+        transform: scale(1); /* Original size */
+    }
+    50% {
+        transform: scale(1.5); /* Adjust scale value to make it pulse bigger */
+    }
+    100% {
+        transform: scale(1); /* Return to original size */
+    }
+}
+
+.animate__animated.customPulse {
+    display: inline-block; /* Ensures it's treated as block-level for transformations */
+    animation: customPulse 2s infinite ease-in-out; /* Apply custom animation */
+}

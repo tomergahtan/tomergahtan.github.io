@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Screen Dimensions</title>
+</head>
+<body>
+
+<button id="displayDimensionsBtn">Display Screen Dimensions</button>
+<div id="dimensions"></div>
+
+<script>
+    document.getElementById('displayDimensionsBtn').addEventListener('click', function() {
+    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+    document.getElementById('dimensions').innerHTML = 'Width: ' + width + 'px, Height: ' + height + 'px';
+});
+
+</script>
+
+</body>
+</html>
