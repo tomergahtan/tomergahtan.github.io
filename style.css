@@ -36,8 +36,11 @@ body::before {
 
 .openimage{
     max-width: 25%;
-    
-    
+border-radius: 50%;
+  width: 200px; /* or any other size */
+  height: 200px; /* should be the same as width to make it a perfect circle */
+  object-fit: cover;
+  border: 7px rgb(239,160,180,0.5) solid;  
     
 }
 
