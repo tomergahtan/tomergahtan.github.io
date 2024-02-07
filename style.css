@@ -53,9 +53,10 @@ body::before {
 }
 
 .imagecontainer{
-   text-align: center;
-   transition: transform 1s ease; /* Smooth transition for transform changes */
-   display: inline-block; /* or as per your layout needs */
+    width: 100%; /* Ensures it spans the full width of its parent */
+    text-align: center;
+    transition: transform 1s ease;
+    display: block;
 }
 
 .openimage{
@@ -65,6 +66,7 @@ border-radius: 50%;
   height: 200px; /* should be the same as width to make it a perfect circle */
   object-fit: cover;
   border: 7px rgb(239,160,180,0.5) solid;  
+  
     
 }
 

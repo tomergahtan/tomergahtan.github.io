@@ -1,4 +1,5 @@
 document.getElementById('imageToClick').addEventListener('click', function(e) {
+    'use strict';
     const rect = e.target.getBoundingClientRect();
     const imageCenterX = rect.left + (rect.width / 2);
     const imageCenterY = rect.top + (rect.height / 2);
