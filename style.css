@@ -22,7 +22,7 @@ body::before {
 .bless{
     padding-top: 30px;
     text-align: center;
-    font-size: clamp(20px, 4vw, 30px);
+    font-size: clamp(30px, 4vw, 50px);
     font-family: "Amatic SC", sans-serif;
   font-weight: 700;
   font-style: normal;
