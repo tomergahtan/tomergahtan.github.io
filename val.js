@@ -2,26 +2,27 @@ document.getElementById('imageToClick').addEventListener('click', function(e) {
     'use strict';
     const rect = e.target.getBoundingClientRect();
     const imageCenterX = rect.left + (rect.width / 2);
-    let imageCenterY = rect.top + (rect.height / 2); // Allow modification of Y-coordinate
+    let imageCenterY = rect.top + (rect.height / 2); 
 
-    // Detect viewport width and adjust for specific devices like Galaxy S10
-    if (window.innerWidth <= 980) { // Example breakpoint for Galaxy S10 size
-        imageCenterY += 70; // Adjust this value to move the heartburst down a bit
+    // Adjust for viewport width for specific devices
+    if (window.innerWidth <= 760) {
+        imageCenterY += 20; // Adjust based on needs for Galaxy S10 size
     }
 
-    const numberOfHearts = 5; // Adjust based on how many hearts you want around the image
-    const radius = Math.max(rect.width, rect.height) / 2 + 30; // 30px beyond the image's half width/height
+    const numberOfHearts = 5; 
+
+    const radius = Math.max(rect.width, rect.height) / 2 + 30; 
 
     for (let i = 0; i < numberOfHearts; i++) {
         const heart = document.createElement('div');
         heart.classList.add('heart');
-        heart.innerHTML = '&#x2764;&#xFE0F;'; // Unicode heart symbol
+        heart.innerHTML = '&#x2764;&#xFE0F;';
         document.body.appendChild(heart);
 
-        // Calculate the position for each heart around the image
-        const angle = (i / numberOfHearts) * 2 * Math.PI; // Distribute hearts evenly around the image
-        const heartX = imageCenterX + radius * Math.cos(angle) - (heart.offsetWidth / 2);
-        const heartY = imageCenterY + radius * Math.sin(angle) - (heart.offsetHeight / 2);
+        // Distribute hearts evenly around the image
+        const angle = (i / numberOfHearts) * 2 * Math.PI; 
+        const heartX = imageCenterX + radius * Math.cos(angle) - (heart.offsetWidth / 2) + window.scrollX;
+        const heartY = imageCenterY + radius * Math.sin(angle) - (heart.offsetHeight / 2) + window.scrollY;
 
         heart.style.left = `${heartX}px`;
         heart.style.top = `${heartY}px`;
@@ -30,7 +31,7 @@ document.getElementById('imageToClick').addEventListener('click', function(e) {
         heart.style.transform = 'scale(0.5)';
 
         // Animate the hearts to scale up and then disappear
-        setTimeout(() => { // Start transformations with a slight delay for smooth animation
+        setTimeout(() => {
             heart.style.transform = 'scale(1)';
             heart.style.opacity = '0';
         }, 10);
