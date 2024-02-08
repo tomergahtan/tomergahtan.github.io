@@ -5,7 +5,7 @@ document.getElementById('imageToClick').addEventListener('click', function(e) {
     let imageCenterY = rect.top + (rect.height / 2); // Allow modification of Y-coordinate
 
     // Detect viewport width and adjust for specific devices like Galaxy S10
-    if (window.innerWidth <= 400) { // Example breakpoint for Galaxy S10 size
+    if (window.innerWidth <= 980) { // Example breakpoint for Galaxy S10 size
         imageCenterY += 70; // Adjust this value to move the heartburst down a bit
     }
 

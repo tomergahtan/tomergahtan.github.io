@@ -10,7 +10,7 @@
 
 <script>
     document.getElementById('displayDimensionsBtn').addEventListener('click', function() {
-    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    const width = window.innerWidth;
     const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
     document.getElementById('dimensions').innerHTML = 'Width: ' + width + 'px, Height: ' + height + 'px';
