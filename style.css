@@ -52,28 +52,26 @@ body::before {
   font-style: normal;
 }
 
-.imagecontainer{
-    width: 100%; /* Ensures it spans the full width of its parent */
-    text-align: center;
-    transition: transform 1s ease;
-    display: inline-block;
-}
+
 
 .openimage{
     max-width: 25%;
-border-radius: 50%;
-  width: 200px; /* or any other size */
-  height: 200px; /* should be the same as width to make it a perfect circle */
-  object-fit: cover;
-  border: 7px rgb(239,160,180,0.5) solid;  
-  
+    border-radius: 50%;
+    width: 200px; /* or any other size */
+    height: 200px; /* should be the same as width to make it a perfect circle */
+    object-fit: cover;
+    border: 7px rgb(239,160,180,0.5) solid;  
+
     
 }
 
 @media (max-width: 786px) {
     .openimage {
         max-width: 50%;
+        
     }
+    
+    
 }
 
 @keyframes customPulse {
@@ -99,6 +97,14 @@ border-radius: 50%;
     animation: burst 1s ease-out forwards;
     user-select: none; /* Prevent selection of text on double click */
 }
+
+.imagecontainer{
+    width: 100%; /* Ensures it spans the full width of its parent */
+    text-align: center;
+    transition: transform 1s ease;
+    display: inline-block;
+}
+
 
 .imagecontainer:hover {
     transform: scale(1.1);

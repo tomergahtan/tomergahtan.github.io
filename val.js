@@ -1,6 +1,8 @@
 document.getElementById('imageToClick').addEventListener('click', function (e) {
     'use strict';
     const rect = e.target.getBoundingClientRect();
+    console.log(rect);
+    
     const imageCenterX = rect.left + (rect.width / 2);
     let imageCenterY = rect.top + (rect.height / 2); 
 
@@ -11,7 +13,7 @@ document.getElementById('imageToClick').addEventListener('click', function (e) {
 
     let radius = Math.max(rect.width, rect.height) / 2 + 30; 
     if (window.innerWidth <= 760) {
-        imageCenterY -= 0;
+        
         radius-=15;// Adjust based on needs for Galaxy S10 size
     }
     
