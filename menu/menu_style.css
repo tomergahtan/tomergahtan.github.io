@@ -21,15 +21,12 @@ body, html {
 
 
 
-#screen-size{
-    font-size: 30px;
-    text-align: center;
-    padding-top: 40px;
-}
+
 
 .menutitle{
+    padding-top: 70px;
     text-align: center;
     font-family: "lemonada",sans-serif;
-    font-size: 30px;
+    font-size: 40px;
 }
 
