@@ -7,22 +7,22 @@ body {
   min-height: 100vh; /* Use viewport height to cover the full screen */
 }
 
-
-
-
 body::before {
-  content: ""; /* Required for the pseudo-element to work */
-  position: absolute;
+  content: "";
+  position: fixed; /* Adjusted to 'fixed' to ensure full viewport coverage */
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('/images/hearts background.webp'); /* Your image */
-  background-repeat: repeat; 
-  background-size: contain; /* Cover the full area */
-  opacity: 0.3; /* Set the opacity to 20% */
-  z-index: -1; /* Ensure the background is behind the content */
+  width: var(--background-width, 100%);
+  height: var(--background-height, 100%);
+  background-image: url('/images/hearts background.webp');
+  background-repeat: no-repeat;
+  background-size: cover; /* 'cover' might be more appropriate depending on your needs */
+  z-index: -1;
+  opacity: 0.3; /* Ensure this is appropriate for your use case */
 }
+
+
+
 
 
 
