@@ -35,7 +35,7 @@ body::before {
 }
 
 /*galaxy s10 sizes*/
-@media (max-width:360px)   {
+@media (max-width:412px)   {
     body::before {
         background-size: 380px 780px;
         background-position: -10px 0px;
