@@ -1,32 +1,44 @@
 
 
-body::before {
-            content: "";
-            position: fixed; /* Cover the entire viewport */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('/images/menu_background.jpg'); /* Path to your image */
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover; /* Cover ensures aspect ratio is maintained */
-            z-index: -1;
-        }
-body, html {
-        height: 100%;
-        margin: 0;
-        }
-
-
-
-
-
-
-.menutitle{
-    padding-top: 70px;
-    text-align: center;
-    font-family: "lemonada",sans-serif;
-    font-size: 40px;
+body {
+  position: relative; /* Needed to position the pseudo-element */
+  margin: 0; /* Optional: removes the default margin of the body */
+  height: 100%; /* Ensure it covers the full viewport height */
+  min-height: 100vh; /* Use viewport height to cover the full screen */
 }
+
+
+
+
+body::before {
+  content: ""; /* Required for the pseudo-element to work */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/hearts background.webp'); /* Your image */
+   /* No repeat */
+  background-size: contain; /* Cover the full area */
+  opacity: 0.3; /* Set the opacity to 20% */
+  z-index: -1; /* Ensure the background is behind the content */
+}
+
+
+
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: center; /* Adjust based on your needs */
+  margin: 0;
+  padding: 0;
+}
+
+.menu img {
+  height: 800px; /* Adjust based on your needs to prevent overflow */
+  width: 500px; /* Adjust to maintain aspect ratio and fit within the .menu */
+}
+
 

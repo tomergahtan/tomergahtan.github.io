@@ -3,42 +3,35 @@
 
 
 function adjustBackgroundSize() {
+  // Use CSS custom properties for more efficient updates
+  const root = document.documentElement;
+  const newWidth = window.innerWidth;
+  const newHeight = window.innerHeight;
 
-    const styleElement = document.getElementById('dynamic-background-style');
-    const screenWidth = window.innerWidth; // Get the current width of the viewport
-    const screenHeight = window.innerHeight; // Get the current height of the viewport
+  // Only update the variables if they have changed
+  const currentWidth = parseInt(getComputedStyle(root).getPropertyValue('--background-width'));
+  const currentHeight = parseInt(getComputedStyle(root).getPropertyValue('--background-height'));
 
-    if (!styleElement) {
-        // If the style element doesn't exist, create it and append it to <head>
-        const newStyleElement = document.createElement('style');
-        newStyleElement.id = 'dynamic-background-style';
-        document.head.appendChild(newStyleElement);
-        newStyleElement.innerHTML = `
-            body::before {
-                background-size: ${screenWidth}px ${screenHeight}px !important;
-            }
-        `;
-    } else {
-        // If the style element exists, update its content
-        styleElement.innerHTML = `
-            body::before {
-                background-size: ${screenWidth}px ${screenHeight}px ;
-            }
-        `;
-    }
+  if (newWidth !== currentWidth || newHeight !== currentHeight) {
+    root.style.setProperty('--background-width', `${newWidth}px`);
+    root.style.setProperty('--background-height', `${newHeight}px`);
+  }
 }
 
+// Initial adjustment
+adjustBackgroundSize();
+
+// Adjust background size on window resize or orientation change
+window.addEventListener('resize', adjustBackgroundSize);
+window.addEventListener('orientationchange', adjustBackgroundSize);
 
 adjustBackgroundSize();
+
 // Attach the adjustBackgroundSize function to window resize event
 window.addEventListener('resize', adjustBackgroundSize);
 
 // Attach the adjustBackgroundSize function to orientation change event
 window.addEventListener('orientationchange', adjustBackgroundSize);
 
-function displayScreenSize() {
-    'use strict';
-            var screenSizeDiv = document.getElementById('screen-size');
-            screenSizeDiv.innerHTML = "Screen Width: " + window.screen.width + "px, Screen Height: " + window.screen.height + "px";
-        }
+
 
