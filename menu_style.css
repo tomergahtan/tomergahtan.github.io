@@ -49,3 +49,9 @@ body::before {
     padding-top: 40px;
 }
 
+.menutitle{
+    text-align: center;
+    font-family: "lemonada",sans-serif;
+    font-size: 30px;
+}
+
