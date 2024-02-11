@@ -1,0 +1,45 @@
+
+
+
+body {
+  position: relative; /* Needed to position the pseudo-element */
+  margin: 0; /* Optional: removes the default margin of the body */
+  height: 100%; /* Ensure it covers the full viewport height */
+  min-height: 100vh; /* Use viewport height to cover the full screen */
+}
+
+body::before {
+  content: ""; /* Required for the pseudo-element to work */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/menu_background.jpg'); /* Your image */
+   /* No repeat */
+    background-repeat: no-repeat;
+  background-size:1600px 800px; /* Cover the full area */
+  opacity: 1; /* Set the opacity to 20% */
+  z-index: -1; /* Ensure the background is behind the content */
+}
+
+
+/*iphone 13 sizes*/
+@media (max-width: 428px) {
+    body::before{
+        
+        background-size: 450px 960px;
+        background-position: -20px -8px;
+    }
+    
+}
+
+/*galaxy s10 sizes*/
+@media (max-width:360px)   {
+    body::before {
+        background-size: 380px 780px;
+        background-position: -10px 0px;
+    }
+
+}
+
