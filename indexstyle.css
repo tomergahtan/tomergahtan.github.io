@@ -111,3 +111,31 @@ body::before {
     transition: transform 1s ease; 
 }
 
+.tomenu {
+    
+    display: block; /* Make the <a> element behave like a block element */
+     /* Align the text to the right */
+    /* Optional: if you want the entire element to align to the right of its container */
+    margin-left: auto;
+    
+    color: #FF648B;
+    
+}
+
+/* Optional: To ensure container elements also align content to the right */
+.menucontainer {
+     /* Align child elements to the right */
+    font-family: "Rubik Bubbles", system-ui;
+    display: flex;
+    align-items: center; 
+    direction: rtl;
+}
+
+.tomenu.right {
+    margin-right: 5%;
+    /* No specific property needed here for alignment */
+}
+
+.tomenu.left {
+    margin-left: 5%; /* This will push the .left link to the right */
+}

@@ -8,17 +8,17 @@ body {
 }
 
 body::before {
-  content: "";
-  position: fixed; /* Adjusted to 'fixed' to ensure full viewport coverage */
+  content: ""; /* Required for the pseudo-element to work */
+  position: absolute;
   top: 0;
   left: 0;
-  width: var(--background-width, 100%);
-  height: var(--background-height, 100%);
-  background-image: url('/images/hearts background.webp');
-  background-repeat: no-repeat;
-  background-size: cover; /* 'cover' might be more appropriate depending on your needs */
-  z-index: -1;
-  opacity: 0.3; /* Ensure this is appropriate for your use case */
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/hearts background.webp'); /* Your image */
+   /* No repeat */
+  background-size: contain; /* Cover the full area */
+  opacity: 0.3; /* Set the opacity to 20% */
+  z-index: -1; /* Ensure the background is behind the content */
 }
 
 
@@ -38,7 +38,14 @@ body::before {
 
 .menu img {
   height: 800px; /* Adjust based on your needs to prevent overflow */
-  width: 500px; /* Adjust to maintain aspect ratio and fit within the .menu */
+  width: 500px;
+/* Adjust to maintain aspect ratio and fit within the .menu */
 }
 
 
+.end{
+    text-align: center;
+    font-size: 40px;
+    font-family: "Rubik Bubbles", system-ui;
+    color: #FF648B;
+}

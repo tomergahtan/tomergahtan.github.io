@@ -1,0 +1,81 @@
+body {
+  position: relative; /* Needed to position the pseudo-element */
+  margin: 0; /* Optional: removes the default margin of the body */
+  height: 100%; /* Ensure it covers the full viewport height */
+  min-height: 100vh; /* Use viewport height to cover the full screen */
+}
+
+body::before {
+  content: ""; /* Required for the pseudo-element to work */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/hearts background.webp'); /* Your image */
+   /* No repeat */
+  background-size: contain; /* Cover the full area */
+  opacity: 0.3; /* Set the opacity to 20% */
+  z-index: -1; /* Ensure the background is behind the content */
+}
+
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10%;/* If you also want vertical centering */
+    
+    min-height: 100vh;
+    border-radius: 30px 30px;/* For vertical centering, adjust or remove as needed */
+    
+}
+
+
+#carouselExampleInterval{
+/* Vertically center */
+    height: 90%;    
+    width: 90%;
+    overflow: hidden; /* Ensures that the images do not bleed outside the rounded corners */
+    border-radius: 30px;
+    
+}
+
+
+
+.bless{
+    
+    padding-top: 20px;
+    text-align: center;
+    
+    font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.heartcontainer{
+    text-align: center
+}
+
+.heartcontainer img{
+    height: 30%;
+    width: 30%;
+}
+
+.menucontainer {
+    font-family: "Rubik Bubbles", system-ui;
+    display: flex;
+    justify-content: space-between; /* This will place child elements at the start and end of the container */
+    width: 100%; /* Ensure the container spans the full width */
+    direction: rtl; /* Right-to-left layout */
+}
+
+.tomenu.right {
+    margin-left: auto;
+    margin-right: 5%;/* Pushes the element to the far end (right in RTL) */
+}
+
+.tomenu.left {
+    margin-right: auto;
+    margin-left: 5%;/* Pushes the element to the start (left in RTL) */
+}
