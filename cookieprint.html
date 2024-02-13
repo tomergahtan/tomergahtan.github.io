@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Site Cookies</title>
+    <script>
+        function displayCookies() {
+            const cookies = document.cookie;
+            if(cookies === "") {
+                document.getElementById("cookiesDisplay").innerText = "No cookies found.";
+            } else {
+                const cookiesArray = cookies.split('; ');
+                const formattedCookies = cookiesArray.map(cookie => {
+                    return `${cookie.split('=')[0]}: ${cookie.split('=')[1]}`;
+                }).join('\n');
+                document.getElementById("cookiesDisplay").innerText = formattedCookies;
+            }
+        }
+    </script>
+</head>
+<body onload="displayCookies()">
+    <h2>Cookies for This Site</h2>
+    <pre id="cookiesDisplay"></pre>
+</body>
+</html>

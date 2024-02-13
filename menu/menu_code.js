@@ -33,6 +33,8 @@ function adjustBackgroundAndEndFontSize() {
     });
 }
 
+
+
 // Initial adjustment
 adjustBackgroundAndEndFontSize();
 

@@ -44,7 +44,22 @@ window.addEventListener('orientationchange', adjustBackgroundAndEndFontSize);
 
 
 
-
+const heartEmojiCodes = [
+    '&#x2764;&#xFE0F;', // Red Heart
+    '&#x1F5A4;',       // Black Heart
+    '&#x1F49B;',       // Yellow Heart
+    '&#x1F49A;',       // Green Heart
+    '&#x1F499;',       // Blue Heart
+    '&#x1F49C;',       // Purple Heart
+    '&#x1F90E;',       // Brown Heart
+    '&#x1F90D;',       // White Heart
+    '&#x1F498;',       // Heart with Arrow
+    '&#x1F49D;',       // Heart with Ribbon
+    '&#x1F496;',       // Sparkling Heart
+    '&#x1F497;',       // Growing Heart
+    '&#x1F493;',       // Beating Heart
+    '&#x1F495;',       // Two Hearts
+];
 
 document.getElementById('imageToClick').addEventListener('click', function (e) {
     'use strict';
@@ -117,3 +132,4 @@ document.addEventListener('DOMContentLoaded', function() {
     imageContainer.addEventListener('touchstart', scaleUp);
     document.addEventListener('touchend', scaleDown);
 });
+
