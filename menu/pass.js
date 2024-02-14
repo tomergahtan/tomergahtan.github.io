@@ -1,18 +1,8 @@
 
-
 import * as ck from '../coockies.js';
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
-    const approve = !!ck.getCookieValue("approve");
-    const link = document.querySelector('a.end'); // Select the link by its class
 
-    if (approve) {
-        link.setAttribute('href', '/index.html');
-    } else {
-        link.setAttribute('href', 'password.html');
-    }
 });
 function adjustBackgroundAndEndFontSize() {
     'use strict';
@@ -30,7 +20,7 @@ function adjustBackgroundAndEndFontSize() {
         root.style.setProperty('--background-height', `${newHeight}px`);
     }
 
-    // Dynamic font size adjustment for .end class
+        // Dynamic font size adjustment for .end class
     // Define a base font size and a reference screen width for .end class
     const baseFontSizeEnd = 40; // Base font size in pixels for .end class
     const referenceScreenWidthEnd = 1920; // Reference screen width for the base font size of .end
@@ -43,13 +33,14 @@ function adjustBackgroundAndEndFontSize() {
     const newFontSizeEnd = Math.max(baseFontSizeEnd * scaleFactorEnd, 20); // Minimum font size is 20px for .end
 
     // Update the font size for all elements with the .end class
-    const elementsEnd = document.querySelectorAll('.end');
+    const elementsEnd = document.querySelectorAll('.form-label');
     elementsEnd.forEach(element => {
         element.style.fontSize = `${newFontSizeEnd}px`;
     });
+    
+
+
 }
-
-
 
 // Initial adjustment
 adjustBackgroundAndEndFontSize();
@@ -60,4 +51,27 @@ window.addEventListener('resize', adjustBackgroundAndEndFontSize);
 // Attach the adjustBackgroundAndEndFontSize function to orientation change event
 window.addEventListener('orientationchange', adjustBackgroundAndEndFontSize);
 
+function navigate(){
+            ck.setCookie("approve",true,0.1);
+            window.location.href = '../index.html';
+            
+}
 
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('myForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+         // Prevent the default form submission
+        const pass = document.getElementById("pass").value;
+        // Optionally do something with "pass", like setting a cookie
+        if ( pass !== "zhetem"){
+            console.log(1);
+            alert("wrong password \u2764\uFE0F");
+        }
+        else{
+            navigate();
+        }
+
+    });
+});

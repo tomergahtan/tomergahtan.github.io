@@ -1,3 +1,6 @@
+
+import {setCookie,getCookieValue,heartEmojiCodes,deleteCookie} from './coockies.js';
+
 function adjustBackgroundAndEndFontSize() {
     'use strict';
 
@@ -44,27 +47,22 @@ window.addEventListener('orientationchange', adjustBackgroundAndEndFontSize);
 
 
 
-const heartEmojiCodes = [
-    '&#x2764;&#xFE0F;', // Red Heart
-    '&#x1F5A4;',       // Black Heart
-    '&#x1F49B;',       // Yellow Heart
-    '&#x1F49A;',       // Green Heart
-    '&#x1F499;',       // Blue Heart
-    '&#x1F49C;',       // Purple Heart
-    '&#x1F90E;',       // Brown Heart
-    '&#x1F90D;',       // White Heart
-    '&#x1F498;',       // Heart with Arrow
-    '&#x1F49D;',       // Heart with Ribbon
-    '&#x1F496;',       // Sparkling Heart
-    '&#x1F497;',       // Growing Heart
-    '&#x1F493;',       // Beating Heart
-    '&#x1F495;',       // Two Hearts
-];
+
+
+
 
 document.getElementById('imageToClick').addEventListener('click', function (e) {
     'use strict';
+    
+
+    if (!getCookieValue("index")){
+        setCookie("index",0,0.1);
+    }
+    
+    console.log(document.cookie);
+    
     const rect = e.target.getBoundingClientRect();
-    console.log(rect);
+    
     
     const imageCenterX = rect.left + (rect.width / 2);
     let imageCenterY = rect.top + (rect.height / 2); 
@@ -80,10 +78,12 @@ document.getElementById('imageToClick').addEventListener('click', function (e) {
         radius-=15;// Adjust based on needs for Galaxy S10 size
     }
     
+    const value = parseInt(getCookieValue('index'))
+    
     for (let i = 0; i < numberOfHearts; i++) {
         const heart = document.createElement('div');
         heart.classList.add('heart');
-        heart.innerHTML = '&#x2764;&#xFE0F;';
+        heart.innerHTML = heartEmojiCodes[value];
         document.body.appendChild(heart);
 
         // Distribute hearts evenly around the image
@@ -108,6 +108,8 @@ document.getElementById('imageToClick').addEventListener('click', function (e) {
             heart.remove();
         });
     }
+    setCookie("index",(value+1)% heartEmojiCodes.length,0.1);
+    deleteCookie("testCookie");
 });
 
 

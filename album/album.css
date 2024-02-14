@@ -15,6 +15,7 @@ body::before {
   background-image: url('/images/hearts background.webp'); /* Your image */
    /* No repeat */
   background-size: contain; /* Cover the full area */
+background-repeat: repeat;
   opacity: 0.3; /* Set the opacity to 20% */
   z-index: -1; /* Ensure the background is behind the content */
 }
