@@ -2,9 +2,9 @@ import os
 
 # Get a list of image files in the current directory
 image_files = [f for f in os.listdir('.') if os.path.isfile(f) and f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp'))]
-print(image_files)
+#print(image_files)
 
-'''import qrcode
+import qrcode
 from PIL import Image
 
 # Data to be encoded
@@ -27,5 +27,5 @@ img = qr.make_image(fill_color="black", back_color="pink")
 
 
 # Display the image
-img.show()'''
+img.show()
 
